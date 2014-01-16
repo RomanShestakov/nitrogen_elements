@@ -56,7 +56,7 @@ render_element(Record) ->
 
 create_buttons([], _Id, Buttons) -> Buttons;
 create_buttons([{Title, Postback} | Rest], Id, Buttons) ->
-    PickledPostbackInfo = wf_event:serialize_event_context({Id, Postback}, Id, Id, ?MODULE),
+    PickledPostbackInfo = wf_event:serialize_event_context({Id, Postback}, Id, Id, false, ?MODULE),
     Button = wf:f("\"~s\": function() {Nitrogen.$queue_event('~s','~s')}", [Title, Id, PickledPostbackInfo]),
     create_buttons(Rest, Id, [Button | Buttons]).
 

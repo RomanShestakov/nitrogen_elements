@@ -16,7 +16,7 @@ render_element(#jqgrid{options = GridOptions} = Record) ->
     PagerID = "pager_html_id_" ++ wf:temp_id(),
 
     %% add extra options
-    Record1 = Record#jqgrid{options = [{pager, list_to_binary(wf:f('#~s', [PagerID]))} | GridOptions]},
+    Record1 = Record#jqgrid{options = [{pager, list_to_binary(wf:f("#~s", [PagerID]))} | GridOptions]},
 
     %% init jqGrid control with specified options
     Options = common:options_to_js(Record1#jqgrid.options),
