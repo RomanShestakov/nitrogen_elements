@@ -5,8 +5,7 @@
 -include_lib("nitrogen_core/include/wf.inc").
 
 %% Dialog
--record(dialog, {?ELEMENT_BASE(element_dialog), title = "", body="", width="auto",
-		 height="auto", show_cancel=false, buttons=[]}).
+-record(dialog, {?ELEMENT_BASE(element_dialog), body="", width="auto", height="auto", show_cancel=false, buttons=[]}).
 
 %% progress bar
 -record(progressbar, {?ELEMENT_BASE(element_progressbar), options=[]}).
